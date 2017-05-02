@@ -43,7 +43,7 @@ class varnish::config {
   }
 
   # For EL7, copy out updated systemd file which includes $VARNISH_EXTRA_LISTEN option to listen on multiple interfaces.
-  if ($::osfamily == "RedHat") && ($::operatingsystemmajrelease == 7) {
+  if ($::osfamily == "RedHat") and ($::operatingsystemmajrelease == 7) {
     file { '/etc/systemd/system/varnish.service':
       owner   => 'root',
       group   => 'root',
