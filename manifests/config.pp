@@ -42,4 +42,21 @@ class varnish::config {
     content => template($sysconfig_template),
   }
 
+  # For EL7, copy out updated systemd file which includes $VARNISH_EXTRA_LISTEN option to listen on multiple interfaces.
+  if ($::osfamily == "RedHat") && ($::operatingsystemmajrelease == 7) {
+    file { '/etc/systemd/system/varnish.service':
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
+      content => template("varnish/el${::operatingsystemmajrelease}/varnish-4-systemd.erb"),
+      notify  => Exec['varnish-systemd-daemon-reload'],
+    }
+
+    exec { 'varnish-systemd-daemon-reload':
+      command     => '/bin/systemctl daemon-reload',
+      refreshonly => true,
+      notify      => Service[$varnish::params::service_name],
+    }
+  }
+
 }

@@ -3,6 +3,8 @@ RELOAD_VCL=1
 VARNISH_VCL_CONF=<%= scope['::varnish::vcl_conf'] %>
 VARNISH_LISTEN_ADDRESS=<%= scope['::varnish::listen'] %>
 VARNISH_LISTEN_PORT=<%= scope['::varnish::listen_port'] %>
+# VARNISH_EXTRA_LISTEN is a list of additional ips/ports to listen on, including the -a flag. e.g. VARNISH_EXTRA_LISTEN="-a 127.0.0.1:80"
+VARNISH_EXTRA_LISTEN=<%= scope['::varnish::extra_listen'] %>
 VARNISH_ADMIN_LISTEN_ADDRESS=<%= scope['::varnish::admin_listen'] %>
 VARNISH_ADMIN_LISTEN_PORT=<%= scope['::varnish::admin_port'] %>
 VARNISH_SECRET_FILE=<%= scope['::varnish::secret_file'] %>

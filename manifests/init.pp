@@ -45,6 +45,7 @@ class varnish (
   $vcl_conf        = $varnish::params::vcl_conf,
   $listen          = $varnish::params::listen,
   $listen_port     = $varnish::params::listen_port,
+  $extra_listen    = "",
   $admin_listen    = $varnish::params::admin_listen,
   $admin_port      = $varnish::params::admin_port,
   $min_threads     = $varnish::params::min_threads,

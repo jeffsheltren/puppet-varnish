@@ -64,6 +64,7 @@ secret.
 |vcl_conf|Varnish vcl config file path|
 |listen|IP to bind to|
 |listen_port|TCP port to listen on|
+|extra_listen|Additional "-a" arguments to pass varnish on startup|
 |admin_listen|Admin IP to bind to|
 |admin_port|TCP port for admin to listen on|
 |min_threads|Minimum Varnish worker threads|
