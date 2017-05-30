@@ -43,6 +43,7 @@ class varnish (
   $secret          = undef,
   $secret_file     = $varnish::params::secret_file,
   $vcl_conf        = $varnish::params::vcl_conf,
+  $instance_name   = $varnish::params::instance_name,
   $listen          = $varnish::params::listen,
   $listen_port     = $varnish::params::listen_port,
   $extra_listen    = "",

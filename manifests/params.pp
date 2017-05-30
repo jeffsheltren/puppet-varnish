@@ -81,6 +81,7 @@ class varnish::params {
 
   # Standard Varnish sysconfig settings
   $vcl_conf       = '/etc/varnish/default.vcl'
+  $instance_name  = 'varnish'
   $listen         = '0.0.0.0'
   $listen_port    = 6081
   $admin_listen   = '127.0.0.1'

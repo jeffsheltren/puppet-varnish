@@ -31,6 +31,7 @@ PrivateTmp=true
 ExecStart=/usr/sbin/varnishd \
     -P /var/run/varnish.pid \
     -f $VARNISH_VCL_CONF \
+    -n ${VARNISH_INSTANCE_NAME} \
     -a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \<% if scope['varnish::extra_listen'] != "" %>
     ${VARNISH_EXTRA_LISTEN} \<% end %>
     -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
