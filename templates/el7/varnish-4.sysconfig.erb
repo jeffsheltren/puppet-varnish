@@ -1,6 +1,7 @@
 ### This file created by Puppet, modification is probably futile
 RELOAD_VCL=1
 VARNISH_VCL_CONF=<%= scope['::varnish::vcl_conf'] %>
+VARNISH_INSTANCE_NAME=<%= scope['::varnish::instance_name'] %>
 VARNISH_LISTEN_ADDRESS=<%= scope['::varnish::listen'] %>
 VARNISH_LISTEN_PORT=<%= scope['::varnish::listen_port'] %>
 # VARNISH_EXTRA_LISTEN is a list of additional ips/ports to listen on, including the -a flag. e.g. VARNISH_EXTRA_LISTEN="-a 127.0.0.1:80"
